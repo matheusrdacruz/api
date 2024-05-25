@@ -7,9 +7,9 @@ spring:
   application:
     name: api
   datasource:
-    url: jdbc:postgresql://dpg-cp8kqj5ds78s73c5msi0-a.virginia-postgres.render.com:5432/vollmed
-    username: vollmed
-    password: iYvaf8UXUm6LSldES6OlU6gs9MCmwvX3
+    url: ${DATASOURCE_URL:jdbc:postgresql://dpg-cp8kqj5ds78s73c5msi0-a.virginia-postgres.render.com:5432/vollmed}
+    username: ${DATASOURCE_USERNAME:vollmed}
+    password: ${DATASOURCE_PASSWORD:iYvaf8UXUm6LSldES6OlU6gs9MCmwvX3}
     #postgres://dpg-cp8kqj5ds78s73c5msi0-a.virginia-postgres.render.com/vollmed
   jpa:
     hibernate:
