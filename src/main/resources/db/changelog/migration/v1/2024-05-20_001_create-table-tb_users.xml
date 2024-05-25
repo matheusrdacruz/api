@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+    <changeSet id="01" author="matheuscruz">
+        <createTable tableName="tb_users">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(80)">
+                <constraints nullable="false" />
+            </column>
+            <column name="username" type="varchar(50)">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="email" type="varchar(80)" >
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="password" type="varchar(80)" />
+
+<!--            <column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at" type="timestamp"/>-->
+<!--            <column defaultValueComputed="CURRENT_TIMESTAMP" name="updated_at" type="timestamp"/>-->
+
+        </createTable>
+    </changeSet>
+    <changeSet author="matheuscruz" id="02">
+        <addAutoIncrement catalogName="cat"
+                          columnDataType="bigint"
+                          columnName="id"
+                          defaultOnNull="false"
+                          generationType="ALWAYS"
+                          incrementBy="1"
+                          schemaName="public"
+                          startWith="1"
+                          tableName="tb_users"/>
+    </changeSet>
+</databaseChangeLog>

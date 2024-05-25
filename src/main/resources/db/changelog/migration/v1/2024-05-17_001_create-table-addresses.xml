@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+    <changeSet id="01" author="matheuscruz">
+        <createTable tableName="tb_addresses">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="street" type="varchar(80)">
+                <constraints nullable="false" />
+            </column>
+            <column name="number" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="neighborhood" type="varchar(80)">
+                <constraints nullable="false" />
+            </column>
+            <column name="postal_code" type="varchar(80)">
+                <constraints nullable="false" />
+            </column>
+            <column name="state" type="varchar(80)">
+                <constraints nullable="false" />
+            </column>
+            <column name="city" type="varchar(80)" >
+                <constraints nullable="false" />
+            </column>
+            <column name="complement" type="varchar(100)" >
+                <constraints nullable="false" />
+            </column>
+            <!--<column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at" type="timestamp"/>
+            <column defaultValueComputed="CURRENT_TIMESTAMP" name="updated_at" type="timestamp"/>-->
+        </createTable>
+    </changeSet>
+    <changeSet author="matheuscruz" id="02">
+        <addAutoIncrement
+                columnDataType="bigint"
+                columnName="id"
+                defaultOnNull="false"
+                generationType="ALWAYS"
+                incrementBy="1"
+                schemaName="public"
+                startWith="1"
+                tableName="tb_addresses"
+        />
+    </changeSet>
+</databaseChangeLog>

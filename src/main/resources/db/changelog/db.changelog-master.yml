@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/migration/v1/2024-05-17_001_create-table-addresses.xml
+  - include:
+      file: classpath:/db/changelog/migration/v1/2024-05-17_002_create-table-doctors.xml
+  - include:
+      file: classpath:/db/changelog/migration/v1/2024-05-17_003_alter-table-doctors.xml
+  - include:
+      file: classpath:/db/changelog/migration/v1/2024-05-18_001_alter-table-doctors.xml
+  - include:
+      file: classpath:/db/changelog/migration/v1/2024-05-20_001_create-table-tb_users.xml
+  - include:
+      file: classpath:/db/changelog/migration/v1/2024-05-22_001_alter-table-users.xml
